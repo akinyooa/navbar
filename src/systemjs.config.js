@@ -24,10 +24,11 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
       // other libraries
-      'rxjs':                      'npm:rxjs',
+      'rxjs': 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'angular2-jwt':               'node_modules/angular2-jwt/angular2-jwt.js',
-      '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
+      'angular2-jwt': 'node_modules/angular2-jwt/angular2-jwt.js',
+      'moment': 'node_modules/moment',
+      'ngx-bootstrap': 'node_modules/ngx-bootstrap',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -43,8 +44,10 @@
         defaultExtension: 'js'
       },
       'angular2-jwt': {
-        "defaultExtension":'js'
-      }
+        "defaultExtension": 'js'
+      },
+      'ngx-bootstrap': { format: 'cjs', main: 'bundles/ngx-bootstrap.umd.js', defaultExtension: 'js' },
+      'moment': { main: 'moment.js', defaultExtension: 'js' },
     }
   });
 })(this);

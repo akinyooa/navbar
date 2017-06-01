@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ModalModule } from 'ngx-bootstrap';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+
 import { AppComponent } from './app.component';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { AuthService } from './services/auth.service';
 
 @NgModule({
-  imports: [BrowserModule, NgbModule.forRoot()],
+  imports: [BrowserModule, ModalModule.forRoot()],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
   providers: [

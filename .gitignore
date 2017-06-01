@@ -2,5 +2,3 @@ node_modules
 bower_components
 src/app/**/*.js
 src/app/**/*.js.map
-src/app/*.js
-src/app/*.js.map
