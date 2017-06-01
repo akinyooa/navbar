@@ -27,7 +27,7 @@ export class AuthService {
         },
         closable: true,
         // uncomment if you want small buttons for social providers
-         socialButtonStyle: 'small'
+         //socialButtonStyle: 'small'
     });
 
     constructor() {

@@ -32,8 +32,6 @@ var AuthService = (function () {
                 primaryColor: 'green'
             },
             closable: true,
-            // uncomment if you want small buttons for social providers
-            socialButtonStyle: 'small'
         });
         // Add callback for lock `authenticated` event
         this.lock.on("authenticated", function (authResult) {
