@@ -19,7 +19,6 @@
           <a *ngIf="authService.authenticated()" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true"
             aria-expanded="false" dropdownToggle>
             <img class="img-circle" [src]="authService.getUserProfilePicture()" style="height: 25px"/>
-            <span class="caret"></span>
           </a>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
             <li role="menuitem">
