@@ -7,14 +7,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>-->
-      <a class="navbar-brand" href="#">Luna</a>
+      <a class="navbar-brand" href="#">Lurra</a>
     </div>
     <div class="navbar-header pull-right">
       <ul class="nav">
         <!--<li><a class="btn" (click)="loginModal.show()" *ngIf="!authService.authenticated()">Sign in/Sign up</a></li>-->
-        <li><a class="btn" (click)="authService.login()" *ngIf="!authService.authenticated()">Sign in/Sign up</a></li>
-        <li><a routerLink="/profile" *ngIf="authService.authenticated()">Profile</a></li>
-        <li><a href="#" (click)="authService.logout()" *ngIf="authService.authenticated()">Logout</a></li>
+        <li>
+          <a class="btn" (click)="authService.login()" *ngIf="!authService.authenticated()">Sign in/Sign up</a>
+        </li>
+        <li dropdown container="body" [isOpen]="dropdownOpen">
+          <a *ngIf="authService.authenticated()" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false" dropdownToggle>
+            <img class="img-circle" [src]="authService.getUserProfilePicture()" style="height: 25px"/>
+            <span class="caret"></span>
+          </a>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem">
+              <a class="dropdown-item" href="#" routerLink="/profile" *ngIf="authService.authenticated()">Profile</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
     <!--/.nav-collapse -->
