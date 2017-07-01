@@ -7,7 +7,7 @@ declare var Auth0Lock: any;
 @Injectable()
 export class AuthService {
     // Configure Auth0
-    lock = new Auth0Lock('-e5nHY8wWAbs3QHH744lBTXSzenrbWta', 'adedev.eu.auth0.com', {
+    options = {
         auth: {
             responseType: 'token',
             sso: true
@@ -21,9 +21,12 @@ export class AuthService {
             title: "Lurra"
         },
         closable: true,
+        avatar: true,
         // uncomment if you want small buttons for social providers
         //socialButtonStyle: 'small'
-    });
+    };
+
+    lock = new Auth0Lock('-e5nHY8wWAbs3QHH744lBTXSzenrbWta', 'adedev.eu.auth0.com', this.options);
 
     constructor() {
         // Add callback for lock `authenticated` event
