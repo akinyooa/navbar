@@ -58,6 +58,12 @@ export class AuthService {
         }
     }
 
+    public getUserName() {
+        if (localStorage.getItem('profile') != null) {
+            return JSON.parse(localStorage.getItem('profile')).name;
+        }
+    }
+
     public logout() {
         // Remove token from localStorage
         localStorage.removeItem('token');

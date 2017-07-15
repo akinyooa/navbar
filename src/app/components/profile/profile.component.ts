@@ -12,7 +12,7 @@ import { moveIn, fallIn, moveInLeft } from '../../router.animations';
 export class ProfileComponent {
     profile: any;
 
-    constructor(private auth: AuthService) {
+    constructor(private authService: AuthService) {
         this.profile = JSON.parse(localStorage.getItem('profile'));
         console.log(this.profile);
     }
