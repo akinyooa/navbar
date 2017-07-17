@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { NewSuggestionComponent } from './components/new-suggestion/new-suggestion.component'
 import { ModalDirective } from 'ngx-bootstrap';
 
 @Component({
@@ -9,26 +10,17 @@ import { ModalDirective } from 'ngx-bootstrap';
 export class AppComponent {
 
   profile: any;
-  @ViewChild('newSuggestionModal') public newSuggestionModal: ModalDirective
+  @ViewChild(NewSuggestionComponent) child: NewSuggestionComponent;
+  public dropdownOpen: boolean;
 
   constructor(private authService: AuthService) { }
 
   logout() {
     this.authService.logout();
+    this.dropdownOpen = false;
   }
 
   showSuggestionModal() {
-    if (!this.profile) {
-      this.profile = JSON.parse(localStorage.getItem('profile'));
-    }
-    this.newSuggestionModal.show();
-  }
-
-  hideSuggestionModal() {
-    this.newSuggestionModal.hide();
-  }
-
-  submitSuggestion() {
-    this.hideSuggestionModal();
+    this.child.showSuggestionModal();
   }
 }

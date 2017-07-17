@@ -1,0 +1,28 @@
+<div class="modal fade" bsModal #newSuggestionModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">New Suggestion</h4>
+                <button type="button" class="close" (click)="hideSuggestionModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>{{profile?.name}}</p>
+                <form>
+                    <div class="form-group">
+                        <!--<textarea type="text" cols="40" rows="5" class="form-control" placeholder="Enter a new suggestion!" id="suggestionInput"
+                            name="suggestionInput" required>
+                        </textarea>-->
+                        <div class="col-xs-12">
+                            <textarea class="form-control" rows="5" placeholder="Enter a new suggestion!" required></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="hideSuggestionModal()">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="hideSuggestionModal()">Submit Suggestion</button>
+            </div>
+        </div>
+    </div>
+</div>

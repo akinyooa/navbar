@@ -2,6 +2,7 @@ export class Suggestion {
 
     suggstion: string;
     
-    constructor() {
+    constructor(suggestion: string) {
+        this.suggstion = suggestion;
     }
 }
