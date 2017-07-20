@@ -8,20 +8,20 @@
             </div>
             <div class="modal-body">
                 <p>{{profile?.name}}</p>
-                <form>
+                <form #suggestionForm="ngForm" (ngSubmit)="onFormSubmit(suggestionForm)">
                     <div class="form-group">
                         <!--<textarea type="text" cols="40" rows="5" class="form-control" placeholder="Enter a new suggestion!" id="suggestionInput"
                             name="suggestionInput" required>
                         </textarea>-->
                         <div class="col-xs-12">
-                            <textarea class="form-control" rows="5" placeholder="Enter a new suggestion!" required></textarea>
+                            <textarea name="suggestion" class="form-control" rows="5" placeholder="Enter a new suggestion!" required ngModel></textarea>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" (click)="hideSuggestionModal()">Cancel</button>
-                <button type="button" class="btn btn-primary" (click)="hideSuggestionModal()">Submit Suggestion</button>
+                <button type="button" class="btn btn-primary" (click)="onFormSubmit(suggestionForm)">Submit Suggestion</button>
             </div>
         </div>
     </div>
