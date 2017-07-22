@@ -1,0 +1,21 @@
+{
+  "name": "angular-test",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ade A <AdeAkinyooye@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/akinyooa/navbar",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.7"
+  }
+}
