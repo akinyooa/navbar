@@ -17,7 +17,7 @@ export class AppComponent {
   @ViewChild(NewSuggestionComponent) child: NewSuggestionComponent;
   public dropdownOpen: boolean;
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   logout() {
     this.authService.logout();
