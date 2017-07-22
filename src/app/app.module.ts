@@ -12,6 +12,9 @@ import { NewSuggestionComponent } from './components/new-suggestion/new-suggesti
 import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { AuthService } from './services/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LurraService } from "./services/lurra.service";
+import { HttpClientModule } from "@angular/common/http";
+import { NewSuggestionService } from "./services/new-suggestion.service";
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp( new AuthConfig({}), http, options);
@@ -26,7 +29,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     ButtonsModule.forRoot(),
     routing,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations:
   [
@@ -40,6 +44,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   [
     appRoutingProviders,
     AuthService,
+    LurraService,
+    NewSuggestionService,
     {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,

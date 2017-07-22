@@ -1,8 +1,12 @@
 export class Suggestion {
 
-    suggstion: string;
+    suggestion: string;
+    posted_by: string;
+    id: any;
+    created: any;
     
-    constructor(suggestion: string) {
-        this.suggstion = suggestion;
+    constructor(suggestion: string, postedBy: string) {
+        this.suggestion = suggestion;
+        this.posted_by = postedBy;
     }
 }
